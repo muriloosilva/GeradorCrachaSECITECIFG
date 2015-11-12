@@ -1,16 +1,5 @@
 package br.com.edu.ifg.cracha.geral.controle;
 
-import com.google.zxing.BarcodeFormat;
-import com.google.zxing.EncodeHintType;
-import com.google.zxing.WriterException;
-import com.google.zxing.common.BitMatrix;
-import com.google.zxing.qrcode.QRCodeWriter;
-import com.google.zxing.qrcode.decoder.ErrorCorrectionLevel;
-
-import br.com.edu.ifg.cracha.geral.modelo.ModeloCracha;
-import br.com.edu.ifg.cracha.geral.modelo.ModeloSQL;
-import br.com.edu.ifg.cracha.geral.visao.VisaoCracha;
-
 import java.awt.Color;
 import java.awt.Graphics2D;
 import java.awt.Point;
@@ -34,10 +23,24 @@ import java.util.Map;
 import java.util.Vector;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+
 import javax.imageio.ImageIO;
 import javax.swing.JOptionPane;
 
+import com.google.zxing.BarcodeFormat;
+import com.google.zxing.EncodeHintType;
+import com.google.zxing.WriterException;
+import com.google.zxing.common.BitMatrix;
+import com.google.zxing.qrcode.QRCodeWriter;
+import com.google.zxing.qrcode.decoder.ErrorCorrectionLevel;
+
+import br.com.edu.ifg.cracha.geral.modelo.ModeloCracha;
+import br.com.edu.ifg.cracha.geral.modelo.ModeloSQL;
+import br.com.edu.ifg.cracha.geral.visao.VisaoCracha;
+import net.sf.jasperreports.engine.DefaultJasperReportsContext;
 import net.sf.jasperreports.engine.JRException;
+import net.sf.jasperreports.engine.JRPropertiesUtil;
+import net.sf.jasperreports.engine.JasperExportManager;
 import net.sf.jasperreports.engine.JasperFillManager;
 import net.sf.jasperreports.engine.JasperPrint;
 import net.sf.jasperreports.view.JasperViewer;
@@ -166,13 +169,13 @@ public class ListenersControle {
                                 
                                 geraQR(nome, cpf, URLQR);
                                 System.out.println("Gerei QR Code " + nome);
-                                stm1.execute("UPDATE participantes SET url='" + URLQR + "\\" + nome + ".png" + "' WHERE cpf_partic='" + cpf + "';");
+                                stm1.execute("UPDATE participantes SET url='" + URLQR + nome + ".png" + "' WHERE cpf_partic='" + cpf + "';");
                                 
                                 String nomeS = rs.getString("nome_simplif");
                                 stm2.execute("UPDATE participantes SET nome_simplif='" + nomeSimplif(nome) + "' WHERE cpf_partic='" + cpf + "';");
                                 System.out.println("Atualizei url no cpf " + cpf);
 
-                                ModeloCracha mC = new ModeloCracha(nome, cpf, "null", URLQR + "\\" + nome + ".png", nomeS);
+                                ModeloCracha mC = new ModeloCracha(nome, cpf, "null", URLQR + nome + ".png", nomeS);
                                 vMC.add(mC);
                             }
                         } catch (SQLException ex) {
@@ -182,11 +185,15 @@ public class ListenersControle {
                         filled = true;
                     }
                     try {
-                    	
+                    	DefaultJasperReportsContext context = DefaultJasperReportsContext.getInstance();
+                    	JRPropertiesUtil.getInstance(context).setProperty("net.sf.jasperreports.default.font.name", "DejaVu Sans");
+                    	JRPropertiesUtil.getInstance(context).setProperty("net.sf.jasperreports.default.pdf.embedded", "true");
+                    	JRPropertiesUtil.getInstance(context).setProperty("net.sf.jasperreports.default.pdf.font.name", "DejaVu Sans");
                         jpPrint = JasperFillManager.fillReport("CrachaFinalSecitec.jasper", new HashMap(), relatResult);
-
-                        jV = new JasperViewer(jpPrint, false);
-                        jV.setVisible(true);
+                        JasperExportManager.exportReportToPdfFile(jpPrint, "cracha.pdf");
+                        JOptionPane.showMessageDialog(null, "Relatório gerado. Atualize o projeto, o relatório aparecerá na raiz.", "Info", JOptionPane.INFORMATION_MESSAGE);
+                        //V = new JasperViewer(jpPrint, false);
+                        //jV.setVisible(true);
                     } catch (JRException ex) {
                         JOptionPane.showMessageDialog(null, "Verifique a URL do relatório.", "Erro", JOptionPane.ERROR_MESSAGE);
                         Logger.getLogger(ListenersControle.class.getName()).log(Level.SEVERE, null, ex);
@@ -331,8 +338,8 @@ public class ListenersControle {
     //--Gerar QRCode
     public void geraQR(String nomeAluno, String cpf, String URLQRCode) {
         String myCodeText = "CPF:" + cpf + ":" + nomeAluno;
-        String filePath = URLQRCode + "\\" + nomeAluno + ".png";
-        int size = 85;
+        String filePath = URLQRCode + nomeAluno + ".png";
+        int size = 40;
         String fileType = "png";
         File myFile = new File(filePath);
         

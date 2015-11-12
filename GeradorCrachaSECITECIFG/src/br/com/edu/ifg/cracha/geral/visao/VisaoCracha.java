@@ -57,7 +57,7 @@ public class VisaoCracha extends javax.swing.JFrame {
         tfURLReport = new javax.swing.JTextField("-");
         pQR = new javax.swing.JPanel();
         lURLQR = new javax.swing.JLabel();
-        tfURLQR = new javax.swing.JTextField("\\QRCodes");
+        tfURLQR = new javax.swing.JTextField("../QRCodes/");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setName("fVisaoCracha"); // NOI18N

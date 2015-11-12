@@ -118,5 +118,6 @@
 	<classpathentry kind="lib" path="lib/jbosscc-needle-2.2.jar"/>
 	<classpathentry kind="lib" path="lib/groovy-all-2.4.5-indy.jar"/>
 	<classpathentry kind="lib" path="lib/groovy-all-2.4.5.jar"/>
+	<classpathentry kind="lib" path="lib/font"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
