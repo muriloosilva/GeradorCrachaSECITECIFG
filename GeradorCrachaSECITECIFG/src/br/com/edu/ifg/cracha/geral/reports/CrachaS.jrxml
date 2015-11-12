@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="CrachaS" language="groovy" columnCount="2" pageWidth="574" pageHeight="800" columnWidth="287" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="5306e8f7-011f-4ce1-9284-826798e0eb93">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString>
+		<![CDATA[select * from participantes;]]>
+	</queryString>
+	<field name="cpf_partic" class="java.lang.String"/>
+	<field name="nome_partic" class="java.lang.String"/>
+	<field name="email_partic" class="java.lang.String"/>
+	<field name="senha_partic" class="java.lang.String"/>
+	<field name="matr_aluno_partic" class="java.lang.String"/>
+	<field name="qtd_ofic" class="java.lang.Integer"/>
+	<field name="qtd_pales" class="java.lang.Integer"/>
+	<field name="qtd_mini" class="java.lang.Integer"/>
+	<field name="ativo" class="java.lang.Integer"/>
+	<field name="id_tipo" class="java.lang.Integer"/>
+	<field name="url" class="java.lang.String"/>
+	<group name="nomesimplif">
+		<groupExpression><![CDATA[$F{nomesimplif}]]></groupExpression>
+	</group>
+	<background>
+		<band height="800" splitType="Stretch">
+			<image>
+				<reportElement uuid="d885cf7e-1b69-40d0-97a4-88cdec6a08bf" x="0" y="0" width="574" height="800"/>
+				<imageExpression><![CDATA["D:\\Desktop\\Downloads\\Crachá V Secitec.jpg"]]></imageExpression>
+			</image>
+		</band>
+	</background>
+	<detail>
+		<band height="390" splitType="Stretch">
+			<image>
+				<reportElement uuid="724e4d85-38a9-4fcc-9bc5-1f233afb0eab" x="12" y="12" width="85" height="85"/>
+				<imageExpression><![CDATA[$F{url}]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement uuid="0ac8dc0f-061e-4539-9a7b-5b857cf9675b" x="12" y="271" width="265" height="32"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="18" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Aluno]]></text>
+			</staticText>
+			<textField>
+				<reportElement uuid="89e474d2-a1b8-44bd-bf25-311b435c2124" x="12" y="318" width="265" height="50"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="18"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{nome_simplif}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="CrachaIndividual" language="groovy" pageWidth="1187" pageHeight="1656" columnWidth="1187" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="90c58afe-3dd2-406b-9636-a5ab2ff6e5df">
+	<property name="ireport.zoom" value="0.5131581182307069"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="808"/>
+	<parameter name="nome" class="java.lang.String"/>
+	<parameter name="url" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<field name="nome" class="java.lang.String"/>
+	<field name="url" class="java.lang.String"/>
+	<background>
+		<band height="1656" splitType="Stretch">
+			<image>
+				<reportElement uuid="a10f8b20-b94d-4674-8ee4-ac4adaec4eb0" x="0" y="0" width="1187" height="1656"/>
+				<imageExpression><![CDATA["C:\\Cracha\\CrachaIFinal.jpg"]]></imageExpression>
+			</image>
+		</band>
+	</background>
+	<detail>
+		<band height="1656" splitType="Stretch">
+			<textField>
+				<reportElement uuid="68615eb8-af20-43ab-82df-ba27a4e0b8d3" x="74" y="1358" width="1004" height="177"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="58"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{nome}]]></textFieldExpression>
+			</textField>
+			<image>
+				<reportElement uuid="17ef9d9d-0ec1-4a43-ab15-e081d4f80d36" x="92" y="247" width="291" height="291"/>
+				<imageExpression><![CDATA[$F{url}]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement uuid="ff0bb0b8-379e-41f1-b992-ee4099d24390" x="74" y="1206" width="1004" height="119"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="62" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Aluno]]></text>
+			</staticText>
+		</band>
+	</detail>
+</jasperReport>

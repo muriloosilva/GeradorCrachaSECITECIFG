@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="ModeloCracha" language="groovy" columnCount="2" pageWidth="574" pageHeight="800" columnWidth="287" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="696ee552-6cba-49e1-83f9-c9a1af1a8395">
+	<property name="ireport.zoom" value="0.9090909090909113"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="foto" class="java.awt.Image">
+		<parameterDescription><![CDATA[]]></parameterDescription>
+	</parameter>
+	<parameter name="url" class="java.lang.String"/>
+	<queryString language="SQL">
+		<![CDATA[select * from alunos;]]>
+	</queryString>
+	<field name="nome" class="java.lang.String"/>
+	<field name="tipo" class="java.lang.String"/>
+	<field name="url" class="java.lang.String"/>
+	<background>
+		<band height="800">
+			<image>
+				<reportElement uuid="7fc1f97f-01ab-4d6a-8475-65744630a80a" x="0" y="0" width="574" height="800"/>
+				<imageExpression><![CDATA["D:\\Desktop\\Downloads\\Crachá V Secitec.jpg"]]></imageExpression>
+			</image>
+		</band>
+	</background>
+	<detail>
+		<band height="390">
+			<textField>
+				<reportElement uuid="bb716373-eb25-40b1-a317-d3abc4bb128d" x="-10" y="314" width="297" height="59"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="22"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{nome}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="19a8c37a-bef4-4f35-94d3-2beb6b00b476" x="0" y="266" width="287" height="40"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="20"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{tipo}]]></textFieldExpression>
+			</textField>
+			<image>
+				<reportElement uuid="35a6aa8c-8048-4c27-a1f3-d4ed0b606506" x="10" y="23" width="85" height="85"/>
+				<imageExpression><![CDATA[$F{url}]]></imageExpression>
+			</image>
+		</band>
+	</detail>
+</jasperReport>

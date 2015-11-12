@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Background" language="groovy" pageWidth="574" pageHeight="800" columnWidth="574" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="6af9b36a-e24e-4990-b762-245ee96d976c">
+	<property name="ireport.zoom" value="0.5644739300537779"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString language="SQL">
+		<![CDATA[select * from alunos;]]>
+	</queryString>
+	<background>
+		<band height="800">
+			<image>
+				<reportElement uuid="a176bb00-6d02-405c-a6d5-30e47a9e8ab7" x="0" y="0" width="574" height="800"/>
+				<imageExpression><![CDATA["D:\\Desktop\\Downloads\\Crachá V Secitec.jpg"]]></imageExpression>
+			</image>
+		</band>
+	</background>
+	<title>
+		<band height="79">
+			<staticText>
+				<reportElement uuid="85fb7927-502c-46bd-8b24-acdfa8c81467" x="163" y="20" width="277" height="36"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="20"/>
+				</textElement>
+				<text><![CDATA[Ul titulo qualquer]]></text>
+			</staticText>
+		</band>
+	</title>
+	<detail>
+		<band height="800" splitType="Stretch">
+			<staticText>
+				<reportElement uuid="5e78250e-91d0-4e1d-a68b-947f16c58701" x="92" y="253" width="380" height="74"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="28"/>
+				</textElement>
+				<text><![CDATA[Teste Imagem de Fundo]]></text>
+			</staticText>
+		</band>
+	</detail>
+</jasperReport>

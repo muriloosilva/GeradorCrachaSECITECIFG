@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="CrachaFinalSecitec" columnCount="2" pageWidth="574" pageHeight="800" columnWidth="287" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="17d03b75-ad92-4b8d-bce4-c3a7567488b8">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="816"/>
+	<queryString language="SQL">
+		<![CDATA[select * from participantes;]]>
+	</queryString>
+	<field name="url" class="java.lang.String"/>
+	<field name="nome_simplif" class="java.lang.String"/>
+	<group name="nome_simplif">
+		<groupExpression><![CDATA[$F{nome_simplif}]]></groupExpression>
+	</group>
+	<background>
+		<band height="800" splitType="Stretch">
+			<image>
+				<reportElement x="0" y="1" width="574" height="799" uuid="db3f94fb-9e0e-47e7-a531-1d2fc8c0fecc"/>
+				<imageExpression><![CDATA["secitec.png"]]></imageExpression>
+			</image>
+		</band>
+	</background>
+	<detail>
+		<band height="386" splitType="Stretch">
+			<image>
+				<reportElement x="21" y="66" width="70" height="70" uuid="903cb026-e357-4408-b4cf-67f6ac856363"/>
+				<imageExpression><![CDATA[$F{url}]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement x="12" y="290" width="262" height="32" uuid="0ac8dc0f-061e-4539-9a7b-5b857cf9675b"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="18" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Aluno]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="38" y="336" width="205" height="34" uuid="b5ca8d15-1df4-4acb-80c5-baf46a1768d1"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="16"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{nome_simplif}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>
