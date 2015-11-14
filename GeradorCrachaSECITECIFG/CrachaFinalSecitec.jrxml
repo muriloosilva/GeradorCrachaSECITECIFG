@@ -22,11 +22,11 @@
 	<detail>
 		<band height="266" splitType="Stretch">
 			<image>
-				<reportElement x="67" y="168" width="52" height="46" uuid="903cb026-e357-4408-b4cf-67f6ac856363"/>
+				<reportElement x="70" y="156" width="52" height="46" uuid="903cb026-e357-4408-b4cf-67f6ac856363"/>
 				<imageExpression><![CDATA[$F{url}]]></imageExpression>
 			</image>
 			<staticText>
-				<reportElement x="14" y="95" width="154" height="23" uuid="0ac8dc0f-061e-4539-9a7b-5b857cf9675b"/>
+				<reportElement x="14" y="82" width="154" height="23" uuid="0ac8dc0f-061e-4539-9a7b-5b857cf9675b"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle" markup="none">
 					<font fontName="SansSerif" size="40" isBold="true" isItalic="false" isPdfEmbedded="false"/>
 					<paragraph tabStopWidth="370"/>
@@ -34,7 +34,7 @@
 				<text><![CDATA[PARTICIPANTE]]></text>
 			</staticText>
 			<textField>
-				<reportElement isPrintRepeatedValues="false" x="14" y="131" width="154" height="35" uuid="b5ca8d15-1df4-4acb-80c5-baf46a1768d1"/>
+				<reportElement isPrintRepeatedValues="false" x="14" y="113" width="154" height="35" uuid="b5ca8d15-1df4-4acb-80c5-baf46a1768d1"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font size="34" isUnderline="false" isStrikeThrough="false"/>
 				</textElement>
