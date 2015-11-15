@@ -72,7 +72,7 @@ public class VisaoCracha extends javax.swing.JFrame {
         lTitulo.setFont(new java.awt.Font("Consolas", 0, 18)); // NOI18N
         lTitulo.setForeground(new java.awt.Color(204, 102, 0));
         lTitulo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lTitulo.setText("Gerador de Crachás V SeCiTec");
+        lTitulo.setText("Gerador de Crachás VI SeCiTec");
         lTitulo.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(204, 102, 0), 3, true));
 
         javax.swing.GroupLayout pTitlePanelLayout = new javax.swing.GroupLayout(pTitlePanel);
